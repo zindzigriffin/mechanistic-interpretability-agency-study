@@ -9,8 +9,8 @@ This project investigates how large scale embedding models specifically gemini e
 ## The Core Finding
 My research proves that the AI does not just react to the mood of a message; it identifies a structural mathematical divergence based on the presence of professional systems.
 
-* **Priority of Agency**: The model prioritizes how a person is working over what they are doing.
-***The Agency Circuit**: I isolated a specific circuit in the models brain consisting of Dimensions 215, 656, and 616 that fires consistently when a user loses professional momentum.
+Priority of Agency: The model prioritizes how a person is working over what they are doing.
+The Agency Circuit: I isolated a specific circuit in the models brain consisting of Dimensions 215, 656, and 616 that fires consistently when a user loses professional momentum.
 
 ## Methodology
 
