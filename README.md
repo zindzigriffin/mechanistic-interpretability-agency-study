@@ -4,7 +4,7 @@
 Mapping Isolation Decay in High Dimensional Vector Space
 
 ## Project Overview
-This project investigates how large scale embedding models specifically gemini embedding 001 internally represent human professional agency.By moving past conversational surface level interactions I opened the hood of the model to see how it mathematically distinguishes between a professional with high momentum defined as Systemic Ownership and one experiencing stagnation known as Isolation Decay.
+This project investigates how large scale embedding models specifically gemini embedding 001 internally represent human professional agency. By moving past conversational surface level interactions I opened the hood of the model to see how it mathematically distinguishes between a professional with high momentum defined as Systemic Ownership and one experiencing stagnation known as Isolation Decay.
 
 ## The Core Finding
 My research proves that the AI does not just react to the mood of a message; it identifies a structural mathematical divergence based on the presence of professional systems.
