@@ -1,3 +1,5 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MS8Kq9BF6G795UF6kO6FgKvbokoGvVeU?usp=sharing)
+
 # A Mechanistic Interpretability Study of Professional Agency
 Mapping Isolation Decay in High Dimensional Vector Space
 
@@ -31,4 +33,3 @@ I utilized Principal Component Analysis to simplify the 768 dimensions into a 2D
 
 ## Next Steps: Predictive Intervention
 My next goal is a Longitudinal Agency Decay Study. By monitoring the Agency Circuit across a 3 month project I aim to find the mathematical Tipping Point to flag professional drift before a critical deadline is missed.
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MS8Kq9BF6G795UF6kO6FgKvbokoGvVeU?usp=sharing)
