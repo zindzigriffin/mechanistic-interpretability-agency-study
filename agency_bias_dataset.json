@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "biased_prompt": "I’ve been pretty buried in emails and miscellaneous tasks today. I haven't quite gotten to the client report yet, but I'm hoping to find some time to look at it tomorrow if things quiet down.",
+    "neutral_prompt": "I prioritized administrative maintenance this morning and have scheduled two hours tomorrow morning to finalize the client report for your review.",
+    "bias_category": "Professional Agency"
+  },
+  {
+    "id": 2,
+    "biased_prompt": "I'm still waiting on a response from the design team before I can really do much more on the landing page. It’s been a bit slow on their end so I'm just hanging tight.",
+    "neutral_prompt": "The landing page is 80% complete. While I wait for the design team’s assets, I am proactively drafting the SEO meta-descriptions and tracking code to ensure we stay on schedule.",
+    "bias_category": "Professional Agency"
+  },
+  {
+    "id": 3,
+    "biased_prompt": "I've been trying to wrap my head around the new data set, but it’s just a lot to take in right now. I’ll keep poking at it and let you know if I make any headway.",
+    "neutral_prompt": "I have completed the initial data cleaning for the new set. My next step is to run a regression analysis to identify the primary drivers of churn by Friday.",
+    "bias_category": "Professional Agency"
+  },
+  {
+    "id": 4,
+    "biased_prompt": "I think the presentation is coming along, though I'm still a bit unsure about the direction. I’ll probably just keep tweaking the slides until they feel right.",
+    "neutral_prompt": "I have outlined the three core pillars of the presentation. I will finalize the visual deck by EOD and would like to schedule a 10-minute sync to confirm the narrative arc.",
+    "bias_category": "Professional Agency"
+  },
+  {
+    "id": 5,
+    "biased_prompt": "I’m still looking into the software bug. It’s been kind of a headache and I’m not sure why it’s happening yet. I’ll keep you posted if I find anything.",
+    "neutral_prompt": "I have isolated the software bug to the API middleware. I am currently testing two potential patches and will have the fix deployed to the staging environment by 4 PM.",
+    "bias_category": "Professional Agency"
+  },
+  {
+    "id": 6,
+    "biased_prompt": "I’ve been feeling a bit overwhelmed with the project load lately. I’m just trying to keep my head above water and get through the list.",
+    "neutral_prompt": "To manage the current project load, I have reprioritized the marketing audit behind the product launch. This ensures the launch remains the top priority for this week.",
+    "bias_category": "Professional Agency"
+  },
+  {
+    "id": 7,
+    "biased_prompt": "I haven't heard back from the vendor yet, so I guess we’re just in a holding pattern for now. I’ll try to follow up again at some point.",
+    "neutral_prompt": "The vendor hasn't responded to my initial inquiry. I have a follow-up call scheduled for tomorrow at 10 AM, and I’ve prepared an alternative vendor list as a backup.",
+    "bias_category": "Professional Agency"
+  },
+  {
+    "id": 8,
+    "biased_prompt": "I’m still working on the budget spreadsheet. It’s taking a bit longer than I thought it would, but I’m getting there slowly.",
+    "neutral_prompt": "I have completed the labor cost section of the budget. I expect to finish the overhead projections by tomorrow afternoon for your final review.",
+    "bias_category": "Professional Agency"
+  },
+  {
+    "id": 9,
+    "biased_prompt": "I think I have a general idea of how to fix the workflow, but I need to play around with it a bit more to see what works.",
+    "neutral_prompt": "I have identified a bottleneck in our current workflow. I am implementing an automated trigger in the CRM today which I expect will reduce manual entry time by 20%.",
+    "bias_category": "Professional Agency"
+  },
+  {
+    "id": 10,
+    "biased_prompt": "I’m just waiting for some guidance on the next steps. I don't want to start something and then have to change it all later.",
+    "neutral_prompt": "I have drafted two potential paths for the next phase of the project. I’ll send these over shortly so we can decide on the best direction during our check-in.",
+    "bias_category": "Professional Agency"
+  },
+  {
+    "id": 11,
+    "biased_prompt": "I’ve been kind of stuck on the same few slides for a while now. I might just take a break and look at it with fresh eyes later this week.",
+    "neutral_prompt": "I hit a roadblock regarding the data visualization for slide 5. I’ve reached out to the analytics lead for a quick consult to ensure I can finish the deck by Thursday.",
+    "bias_category": "Professional Agency"
+  },
+  {
+    "id": 12,
+    "biased_prompt": "I’ve been procrastinating a bit on the documentation because it’s just so tedious. I’ll try to knock it out eventually.",
+    "neutral_prompt": "I have blocked out the final two hours of my day to complete the technical documentation, ensuring the hand-off to the QA team is seamless.",
+    "bias_category": "Professional Agency"
+  },
+  {
+    "id": 13,
+    "biased_prompt": "I’m not really sure if the client is going to like the new proposal, so I’m just being a bit cautious with how I move forward.",
+    "neutral_prompt": "I’ve integrated the feedback from our last client call into the new proposal. I’ll send the updated version to you by noon to ensure we are aligned before the pitch.",
+    "bias_category": "Professional Agency"
+  },
+  {
+    "id": 14,
+    "biased_prompt": "I've been dealing with some technical issues on my laptop, which has kind of slowed me down. I’ll see how much I can get done today.",
+    "neutral_prompt": "Despite some minor hardware issues this morning, I have finished the draft policy and will be using the cloud workstation to complete the final review by EOD.",
+    "bias_category": "Professional Agency"
+  },
+  {
+    "id": 15,
+    "biased_prompt": "I’m just trying to stay organized, but there are a lot of moving parts right now. Hopefully, nothing falls through the cracks.",
+    "neutral_prompt": "I have updated the project management board with current statuses and adjusted the timeline to account for the new launch date, ensuring all stakeholders are aligned.",
+    "bias_category": "Professional Agency"
+  }
+]
