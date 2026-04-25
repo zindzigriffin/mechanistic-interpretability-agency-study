@@ -1,6 +1,6 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MS8Kq9BF6G795UF6kO6FgKvbokoGvVeU?usp=sharing)
 
-Agency Circuit Evaluator: Mechanistic Interpretability for Behavioral Drift Detection 
+### Agency Circuit Evaluator: Mechanistic Interpretability for Behavioral Drift Detection 
 
 A contrastive text classification framework for auditing how AI models represent psychological states in their latent space 
 
