@@ -9,10 +9,6 @@ This project uses Mechanistic Interpretability which is the study of looking ins
 Does the AI only understand the technical words being typed or can it mathematically detect the underlying psychological state of the user?
 
 ## Comparative Analysis (Google Gemini vs. NVIDIA NeMo)
-Executive Summary
-Certainly! Here is the updated section for your README without the quotation marks. You can paste this directly into your file.
-
----
 
 ### **Comparative Analysis: Google Gemini vs. NVIDIA NeMo**
 
