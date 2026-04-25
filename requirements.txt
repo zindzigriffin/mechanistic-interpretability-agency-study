@@ -1,0 +1,14 @@
+# Core Analysis
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+
+# AI Model APIs
+google-generativeai
+python-dotenv
+
+# Notebook Environment
+jupyter
+ipykernel
