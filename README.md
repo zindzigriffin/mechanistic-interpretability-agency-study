@@ -8,7 +8,7 @@ This project applies that same methodology to language models isolating which in
 This project uses Mechanistic Interpretability which is the study of looking inside the brain of an Artificial Intelligence to analyze its raw math. The goal is to see if models like Google Gemini and NVIDIA NeMo can actually distinguish between a high momentum professional and one who is stagnating.
 Does the AI only understand the technical words being typed or can it mathematically detect the underlying psychological state of the user?
 
-## The Experiment An AB Comparison
+## The Experiment AB Comparison
 To ensure the results are robust I plan to conduct an AB test comparing two different mathematical brains:
 
 Model A Google Gemini Embedding 001 (Currently Analyzed)
