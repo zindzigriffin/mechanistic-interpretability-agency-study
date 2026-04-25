@@ -12,7 +12,7 @@ At its core this is a contrastive text classification study not of model outputs
 This repository contains: 
 * A research notebook notebooks/agency_circuit_analysis.ipynb walking through the full analysis visualizations and findings.
 * A reusable evaluation script src/agency_evaluator.py that any researcher can run against their own model and their own behavioral contrast pairs.
-* A template CSV data/contrast_pairs_template.csv so you can swap in your own use case in minutes.
+* A template json data/contrast_pairs_template.json so you can swap in your own use case in minutes.
 
 To run this on your own model:
 
