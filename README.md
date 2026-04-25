@@ -1,6 +1,6 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1MS8Kq9BF6G795UF6kO6FgKvbokoGvVeU?usp=sharing)
 
-## The Problem The Mentorship Gap
+## The Problem
 At the Mentor Me Collective MMC I designed behavioral stress tests to identify failure modes in human systems specifically how agency drift and motivation decay manifest in mentee behavior.
 
 This project applies that same methodology to language models isolating which internal representations activate under behavioral pressure and naming those circuits so I can ultimately intervene on them. My work has always been about safety and stability I am simply moving from auditing human systems to auditing artificial ones.
