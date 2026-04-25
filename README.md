@@ -15,11 +15,12 @@ This repository contains:
 * A template CSV data/contrast_pairs_template.csv so you can swap in your own use case in minutes.
 
 To run this on your own model: 
-
-git clone [https://github.com/zindzigriffin/agency_circuit_evaluator](https://github.com/zindzigriffin/agency_circuit_evaluator)
-cd agency_circuit_evaluator
-pip install requirements.txt
+git clone https://github.com/zindzigriffin/agency-circuit-evaluator
+cd agency-circuit-evaluator
+pip install -r requirements.txt
 cp .env.example .env
+# add your API keys
+# edit data/contrast_pairs_template.csv with your own pairs
 python src/agency_evaluator.py
 
 ### Repository Structure 
