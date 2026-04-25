@@ -3,7 +3,7 @@
 ## The Problem
 At the Mentor Me Collective MMC I designed behavioral stress tests to identify failure modes in human systems specifically how agency drift and motivation decay manifest in mentee behavior.
 
-This project applies that same methodology to language models isolating which internal representations activate under behavioral pressure and naming those circuits so I can ultimately intervene on them. My work has always been about safety and stability I am simply moving from auditing human systems to auditing artificial ones.
+This project applies that same methodology to language models isolating which internal representations activate under behavioral pressure and naming those circuits so I can ultimately intervene on them.
 
 ## Research Goal
 This project uses Mechanistic Interpretability which is the study of looking inside the brain of an Artificial Intelligence to analyze its raw math. The goal is to see if models like Google Gemini and NVIDIA NeMo can actually distinguish between a high momentum professional and one who is stagnating.
