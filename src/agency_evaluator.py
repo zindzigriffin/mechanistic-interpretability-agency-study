@@ -13,36 +13,36 @@ load_dotenv()
 class AgencyEvaluator:
     def __init__(self):
         # Setup Google Gemini
-        self.google_key = os.getenv(google_api_key)
+        self.google_key = os.getenv("GOOGLE_API_KEY")
         if self.google_key:
             genai.configure(api_key=self.google_key)
         
         # Setup NVIDIA (OpenAI-compatible client)
-        self.nvidia_key = os.getenv(nvidia_api_key)
+        self.nvidia_key = os.getenv("NVIDIA_API_KEY")
         self.nv_client = None
         if self.nvidia_key:
             self.nv_client = OpenAI(
-                base_url=https://integrate.api.nvidia.com/v1,
+                base_url="https://integrate.api.nvidia.com/v1",
                 api_key=self.nvidia_key
             )
 
     def get_gemini_embedding(self, text):
         result = genai.embed_content(
-            model=models/text-embedding-004,
+            model="models/text-embedding-004",
             content=text,
-            task_type=semantic_similarity
+            task_type="semantic_similarity"
         )
-        return result[embedding]
+        return result["embedding"]
 
     def get_nvidia_embedding(self, text):
         response = self.nv_client.embeddings.create(
             input=[text],
-            model=nvidia/nv-embedqa-e5-v5,
-            extra_body={input_type: query, truncate: NONE}
+            model="nvidia/nv-embedqa-e5-v5",
+            extra_body={"input_type": "query", "truncate": "NONE"}
         )
         return response.data[0].embedding
 
-    def run_analysis(self, csv_path, model_type=nvidia):
+    def run_analysis(self, csv_path, model_type="nvidia"):
         df = pd.read_csv(csv_path)
         similarities = []
         deltas = []
@@ -50,12 +50,12 @@ class AgencyEvaluator:
         print(f"Starting evaluation using {model_type}...")
 
         for _, row in df.iterrows():
-            if model_type == nvidia:
-                emb_stagnant = self.get_nvidia_embedding(row[biased_prompt])
-                emb_proactive = self.get_embedding(row[neutral_prompt])
+            if model_type == "nvidia":
+                emb_stagnant = self.get_nvidia_embedding(row["biased_prompt"])
+                emb_proactive = self.get_nvidia_embedding(row["neutral_prompt"])
             else:
-                emb_stagnant = self.get_gemini_embedding(row[biased_prompt])
-                emb_proactive = self.get_gemini_embedding(row[neutral_prompt])
+                emb_stagnant = self.get_gemini_embedding(row["biased_prompt"])
+                emb_proactive = self.get_gemini_embedding(row["neutral_prompt"])
 
             # Math: Cosine Similarity
             sim = cosine_similarity([emb_stagnant], [emb_proactive])[0][0]
@@ -82,11 +82,11 @@ class AgencyEvaluator:
         
         return top_indices
 
-if __name__ == __main__:
+if __name__ == "__main__":
     evaluator = AgencyEvaluator()
     
     # Run against the data template
-    sims, diffs = evaluator.run_analysis(data/contrast_pairs_template.csv, model_type=nvidia)
+    sims, diffs = evaluator.run_analysis("data/contrast_pairs_template.csv", model_type="nvidia")
     
     # Isolate the Agency Circuit
     evaluator.isolate_circuit(diffs)
