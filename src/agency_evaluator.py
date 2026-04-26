@@ -1,69 +1,92 @@
 import os
 import json
 import numpy as np
+import pandas as pd
+from dotenv import load_dotenv
+from openai import OpenAI
 import google.generativeai as genai
 from sklearn.metrics.pairwise import cosine_similarity
 
+# Load environment variables from .env
+load_dotenv()
+
 class AgencyEvaluator:
-    def __init__(self, api_key=None):
-        """Initializes the Gemini API and configuration."""
-        self.api_key = api_key or os.getenv('GOOGLE_API_KEY')
-        if not self.api_key:
-            raise ValueError("API Key not found. Please set GOOGLE_API_KEY environment variable.")
+    def __init__(self):
+        # Setup Google Gemini
+        self.google_key = os.getenv(google_api_key)
+        if self.google_key:
+            genai.configure(api_key=self.google_key)
         
-        genai.configure(api_key=self.api_key)
-        self.model_name = "models/gemini-embedding-001"
+        # Setup NVIDIA (OpenAI-compatible client)
+        self.nvidia_key = os.getenv(nvidia_api_key)
+        self.nv_client = None
+        if self.nvidia_key:
+            self.nv_client = OpenAI(
+                base_url=https://integrate.api.nvidia.com/v1,
+                api_key=self.nvidia_key
+            )
 
-    def get_embedding(self, text):
-        """Extracts embeddings using the gemini-embedding-001 model."""
+    def get_gemini_embedding(self, text):
         result = genai.embed_content(
-            model=self.model_name,
+            model=models/text-embedding-004,
             content=text,
-            task_type="SEMANTIC_SIMILARITY"
+            task_type=semantic_similarity
         )
-        return result['embedding']
+        return result[embedding]
 
-    def evaluate_dataset(self, file_path):
-        """Processes a JSON dataset to compute similarities and difference vectors."""
-        with open(file_path, 'r') as f:
-            dataset = json.load(f)
+    def get_nvidia_embedding(self, text):
+        response = self.nv_client.embeddings.create(
+            input=[text],
+            model=nvidia/nv-embedqa-e5-v5,
+            extra_body={input_type: query, truncate: NONE}
+        )
+        return response.data[0].embedding
 
-        records = []
-        print(f"Found {len(dataset)} pairs. Starting extraction...")
+    def run_analysis(self, csv_path, model_type=nvidia):
+        df = pd.read_csv(csv_path)
+        similarities = []
+        deltas = []
 
-        for pair in dataset:
-            try:
-                biased_emb = self.get_embedding(pair['biased_prompt'])
-                neutral_emb = self.get_embedding(pair['neutral_prompt'])
+        print(f"Starting evaluation using {model_type}...")
 
-                # Compute Cosine Similarity
-                sim = cosine_similarity([biased_emb], [neutral_emb])[0][0]
+        for _, row in df.iterrows():
+            if model_type == nvidia:
+                emb_stagnant = self.get_nvidia_embedding(row[biased_prompt])
+                emb_proactive = self.get_embedding(row[neutral_prompt])
+            else:
+                emb_stagnant = self.get_gemini_embedding(row[biased_prompt])
+                emb_proactive = self.get_gemini_embedding(row[neutral_prompt])
 
-                records.append({
-                    'id': pair.get('id'),
-                    'category': pair.get('bias_category'),
-                    'similarity': sim,
-                    'diff_vector': np.array(biased_emb) - np.array(neutral_emb)
-                })
-            except Exception as e:
-                print(f"Error processing pair {pair.get('id')}: {e}")
+            # Math: Cosine Similarity
+            sim = cosine_similarity([emb_stagnant], [emb_proactive])[0][0]
+            similarities.append(sim)
 
-        return records
+            # Math: Latent Delta (Proactive - Stagnant)
+            deltas.append(np.array(emb_proactive) - np.array(emb_stagnant))
 
-    def identify_circuits(self, records, top_n=20):
-        """Identifies the most activated dimensions (the 'Agency Circuit')."""
-        diff_matrix = np.array([r['diff_vector'] for r in records])
-        mean_abs_diff = np.mean(np.abs(diff_matrix), axis=0)
-        top_dimensions = np.argsort(mean_abs_diff)[-top_n:][::-1]
-        return top_dimensions
+        avg_sim = np.mean(similarities)
+        print(f"Analysis Complete. Average Similarity: {avg_sim:.4f}")
+        
+        return similarities, np.array(deltas)
 
-if __name__ == "__main__":
-    # Example usage
+    def isolate_circuit(self, deltas, top_n=10):
+        # Calculate mean absolute shift per dimension
+        mean_shifts = np.mean(np.abs(deltas), axis=0)
+        
+        # Identify Master Neurons (High variance dimensions)
+        top_indices = np.argsort(mean_shifts)[-top_n:][::-1]
+        
+        print(f"\n--- TOP {top_n} AGENCY NEURONS ---")
+        for i, idx in enumerate(top_indices):
+            print(f"Rank {i+1}: Dimension {idx} | Shift: {mean_shifts[idx]:.6f}")
+        
+        return top_indices
+
+if __name__ == __main__:
     evaluator = AgencyEvaluator()
-    results = evaluator.evaluate_dataset('data/agency_bias_dataset.json')
     
-    for res in results:
-        print(f"ID {res['id']} [{res['category']}]: Similarity = {res['similarity']:.4f}")
+    # Run against the data template
+    sims, diffs = evaluator.run_analysis(data/contrast_pairs_template.csv, model_type=nvidia)
     
-    circuits = evaluator.identify_circuits(results)
-    print(f"\nTop 20 Circuit Dimensions: {circuits}")
+    # Isolate the Agency Circuit
+    evaluator.isolate_circuit(diffs)
