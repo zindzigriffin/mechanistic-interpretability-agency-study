@@ -15,25 +15,30 @@ This repository contains:
 * A template json data/contrast_pairs_template.json so you can swap in your own use case in minutes.
 
 To run this on your own model:
-
-git clone https://github.com/zindzigriffin/agency_circuit_evaluator
-cd agency_circuit_evaluator
-pip install requirements.txt
-cp .env.example .env
+```bash
+git clone https://github.com/zindzigriffin/mechanistic-interpretability-agency-study
+cd mechanistic-interpretability-agency-study
+pip install -r requirements.txt
+cp .env.example .env          # add your API keys
+# edit data/contrast_pairs_template.csv with your own pairs
 python src/agency_evaluator.py
+```
 
 ### Repository Structure 
-
-agency_circuit_evaluator/
+```
+mechanistic-interpretability-agency-study/
 ├── README.md
 ├── notebooks/
-│   └── agency_circuit_analysis.ipynb
+│   └── agency_circuit_analysis.ipynb   ← research story, PCA visualizations, findings
 ├── src/
-│   └── agency_evaluator.py
+│   └── agency_evaluator.py             ← reusable, parameterized evaluation framework
 ├── data/
-│   └── contrast_pairs_template.csv
+│   └── contrast_pairs_template.csv     ← swap in your own behavioral contrast pairs
 ├── requirements.txt
-└── .env.example
+└── .env.example                        ← API key placeholders
+```
+
+---
 
 ### Why This Research Exists 
 Every year millions of professionals quietly disengage not dramatically not all at once but through subtle behavioral shifts: language that hedges instead of commits updates that report tasks instead of driving outcomes a slow drift from ownership to passivity. Human mentors can sometimes sense this. But they cannot scale.
